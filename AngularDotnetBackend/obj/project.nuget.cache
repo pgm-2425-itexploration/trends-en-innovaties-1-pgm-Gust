@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OhusT1K/xD4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gustp\\Desktop\\Herexamens\\IT-Exploration\\trends-en-innovaties-1-pgm-Gust\\AngularDotnetBackend\\AngularDotnetBackend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gustp\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "C:\\Users\\gustp\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

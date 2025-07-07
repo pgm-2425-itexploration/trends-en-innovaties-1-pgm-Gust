@@ -1,0 +1,198 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #ef4444;
+  --accent-bg: #fee2e2;
+  --background: #f3f4f6;
+  --card-bg: #fff;
+  --border: #e5e7eb;
+  --text: #1e293b;
+  --muted: #6b7280;
+  --radius: 14px;
+  --shadow: 0 6px 32px rgba(37, 99, 235, 0.07);
+  --transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: var(--background);
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+}
+
+.task-list-container {
+  max-width: 480px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.task-list-container h2 {
+  text-align: center;
+  margin-bottom: 0.2rem;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+.task-list-container p {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  font-size: 1.08rem;
+}
+
+.task-list-container form {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-list-container input[type="text"] {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 1.08rem;
+  background: #f9fafb;
+  color: var(--text);
+  transition: border var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.task-list-container input[type="text"]:focus {
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 0 0 2px var(--primary), 0 2px 8px rgba(37, 99, 235, 0.07);
+}
+
+/* --- BUTTONS --- */
+.task-list-container button[type="submit"] {
+  padding: 0.65rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+  outline: none;
+  letter-spacing: 0.01em;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+.task-list-container button[type="submit"]:hover,
+.task-list-container button[type="submit"]:focus {
+  background: #1d4ed8;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.16);
+  transform: translateY(-1px) scale(1.025);
+}
+.task-list-container button[type="submit"]:active {
+  background: #1e40af;
+  transform: scale(0.98);
+}
+
+.task-list-container .delete-btn {
+  padding: 0.65rem 1.5rem;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+  outline: none;
+  letter-spacing: 0.01em;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+.task-list-container .delete-btn:hover,
+.task-list-container .delete-btn:focus {
+  background: #b91c1c;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.16);
+  transform: translateY(-1px) scale(1.025);
+}
+.task-list-container .delete-btn:active {
+  background: #991b1b;
+  transform: scale(0.98);
+}
+
+/* --- REST --- */
+.task-list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.task-list-container li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 7px;
+  border-bottom: 1px solid var(--border);
+  background: #f9fafb;
+  transition: background var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.task-list-container li:last-child {
+  border-bottom: none;
+}
+
+.task-list-container li:hover {
+  background: #e0e7ef;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04);
+}
+
+.task-list-container input[type="checkbox"] {
+  accent-color: var(--primary);
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+  transition: box-shadow var(--transition);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1em;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 700px) {
+  .task-list-container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .task-list-container form {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .task-list-container button[type="submit"] {
+    width: 100%;
+  }
+}

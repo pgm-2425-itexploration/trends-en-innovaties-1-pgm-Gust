@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Yw7F/d5cVcY4iWKjpWTu/K05qnP/x2YwdZtyKsmU3OU=",
+  "Source": "AngularDotnetBackend",
+  "BasePath": "_content/AngularDotnetBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

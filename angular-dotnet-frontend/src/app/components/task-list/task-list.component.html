@@ -1,0 +1,41 @@
+<div class="task-list-container">
+  <h2>My Task List</h2>
+  <p>
+    Add tasks, check them off, or delete them. Everything happens directly in
+    the server's memory (no database).
+  </p>
+
+  <form (submit)="addTask(); $event.preventDefault()">
+    <input
+      type="text"
+      [(ngModel)]="newTaskTitle"
+      name="newTaskTitle"
+      placeholder="E.g.: Buy groceries"
+      required
+    />
+<button type="submit">Add Task</button>
+  </form>
+
+  <ul *ngIf="tasks.length > 0; else noTasks">
+    <li *ngFor="let task of tasks">
+      <input
+        type="checkbox"
+        [(ngModel)]="task.isCompleted"
+        (change)="updateTask(task)"
+      />
+      <span [ngClass]="{ completed: task.isCompleted }">{{ task.title }}</span>
+<button class="delete-btn" (click)="deleteTask(task.id)">Delete Task</button>
+    </li>
+  </ul>
+
+  <ng-template #noTasks>
+    <p>No tasks found. Add one!</p>
+  </ng-template>
+
+  <footer
+    style="margin-top: 2rem; text-align: center; color: #888; font-size: 0.9em"
+  >
+    <hr />
+    <p>Demo app without a database, for explanation and testing only.</p>
+  </footer>
+</div>
